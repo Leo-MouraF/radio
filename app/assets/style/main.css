@@ -1,0 +1,38 @@
+html,
+body {
+	padding: 0;
+	margin: 0;
+	font-size: 1.5vw;
+}
+
+* {
+	box-sizing: border-box;
+	font-size: 100%;
+	outline: none;
+}
+
+div.container {
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+}
+
+div.content {
+	flex-grow: 5;
+	padding: 1.5vw;
+}
+
+div.entrada {
+	flex-grow: 1;
+	display: flex;
+}
+
+div.entrada textarea {
+	flex-grow: 6;
+	resize: none;
+	padding: 1.5vw;
+}
+
+div.entrada button {
+	flex-grow: 1;
+}
