@@ -1,8 +1,19 @@
+@keyframes typing {
+    0%  { 
+    	transform: scale(1);  
+   	}
+    
+    50% {
+    	transform: scale(1.2);
+    }
+}
+
 html,
 body {
 	padding: 0;
 	margin: 0;
-	font-size: 1.5vw;
+	font-size: 1.2vw;
+	overflow: hidden;
 }
 
 * {
@@ -20,19 +31,43 @@ div.container {
 div.content {
 	flex-grow: 5;
 	padding: 1.5vw;
+	overflow: auto;
+	height: inherit;
 }
 
 div.entrada {
 	flex-grow: 1;
 	display: flex;
+	border-top: 1px solid #000;
 }
 
 div.entrada textarea {
 	flex-grow: 6;
 	resize: none;
 	padding: 1.5vw;
+	border: 0 none;
 }
 
 div.entrada button {
 	flex-grow: 1;
+	background-image: url("images/mic.svg");
+	background-size: auto 80%;
+	background-repeat: no-repeat;
+	background-position: center;
+	color: transparent;
+	border: 0 none;
+	border-radius: 40px
+}
+
+div.entrada button:active {
+	animation: typing 1s infinite;
+}
+
+div.entrada button.animateTextSend {
+	animation: typing .2s ;
+}
+
+div.entrada button.typing {
+	background-image: url("images/send.svg");
+	background-size: 80% auto;
 }
