@@ -12,7 +12,7 @@ html,
 body {
 	padding: 0;
 	margin: 0;
-	font-size: 1.2vw;
+	font-size: 1em ;
 	overflow: hidden;
 }
 
@@ -30,9 +30,41 @@ div.container {
 
 div.content {
 	flex-grow: 5;
-	padding: 1.5vw;
+	padding: 1em;
 	overflow: auto;
 	height: inherit;
+}
+
+div.content div.message {
+	background: #ccc;
+	border-radius: 1em;
+	margin: 1em;
+	float: right;
+	padding: 0.75em;
+	position: relative;
+}
+
+div.content div.message:after {
+	content: " ";
+	display: block;
+	position: absolute;
+	right: 2%;
+	top: 100%;
+	width: 0px;
+	height: 0px;
+
+	border-top   : 1em solid #CCC;
+	border-right : 1em solid transparent;
+	border-bottom: 1em solid transparent;
+	border-left  : 1em solid transparent;
+
+
+}
+div.content div.message.me:after {
+	left: 5%;
+}
+div.content div.message.me {
+	float: left;
 }
 
 div.entrada {
@@ -44,7 +76,7 @@ div.entrada {
 div.entrada textarea {
 	flex-grow: 6;
 	resize: none;
-	padding: 1.5vw;
+	padding: 0.75em;
 	border: 0 none;
 }
 
@@ -56,7 +88,7 @@ div.entrada button {
 	background-position: center;
 	color: transparent;
 	border: 0 none;
-	border-radius: 40px
+	border-radius: 1em
 }
 
 div.entrada button:active {
@@ -69,5 +101,36 @@ div.entrada button.animateTextSend {
 
 div.entrada button.typing {
 	background-image: url("images/send.svg");
-	background-size: 80% auto;
+	background-size : auto 80%;
+}
+
+
+
+/*@media screen and (min-width: 400px) and (max-width: 600px) {
+    html,
+    body {
+    	background: green
+    }
+}*/
+
+@media screen and (max-width: 700px) {
+   div.content div.message:after {
+		border-right : 0.75em solid transparent;
+		border-bottom: 0.75em solid transparent;
+		border-left  : 0.75em solid transparent;
+		right: 4%;
+
+    }
+}
+ 
+ @media screen and (max-width: 700px) {
+   div.content div.message:after {
+    	right: 5%;
+	}
+}
+
+@media screen and (max-width: 320px) {
+   div.container {
+    	width: 320px;
+	}
 }
